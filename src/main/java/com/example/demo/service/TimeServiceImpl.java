@@ -27,4 +27,32 @@ public class TimeServiceImpl implements TimeService {
         c = new GregorianCalendar();
     }
 
+    @Override
+    public int calcularEdad(GregorianCalendar fechaNac){
+
+        Calendar fechaActual = Calendar.getInstance();
+        int years = fechaActual.get(Calendar.YEAR) - fechaNac.get(Calendar.YEAR);
+        int months = fechaActual.get(Calendar.MONTH) - fechaNac.get(Calendar.MONTH);
+        int days = fechaActual.get(Calendar.DAY_OF_MONTH) - fechaNac.get(Calendar.DAY_OF_MONTH)
+        
+if (months < 0 || (months==0 && days < 0)){
+
+    years = years -1;
+
+}
+
+return years;
+
+ 
+
+
+
+    }
+
+
+
+
+
+
+
 }
